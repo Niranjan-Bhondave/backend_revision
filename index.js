@@ -3,6 +3,11 @@ const app = express();
 require('dotenv').config()
 
 
+const data = {
+    "name":"niru",
+    "age":"21"
+}
+
 app.get("/", (req,res) => {
     res.send("Hello World")
     console.log("Home page");
@@ -19,6 +24,10 @@ app.get("/login", (req,res) =>{
     res.send('<h1>Login Page</h1>')
     console.log("login credentials");
     
+})
+
+app.get("/end", (req,res)=>{
+    res.json(data);
 })
 
 app.get("/youtube", (req,res) =>{
